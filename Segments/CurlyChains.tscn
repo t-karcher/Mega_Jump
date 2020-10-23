@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Segments/CoinChain/CoinChain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Segments/Segment.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 7.236e-05, -65.4065, -7.236e-05, 65.4065, 161.915, 91.105, 8.39233e-05, -67.7849, -8.39233e-05, 67.7849, 26.5085, 166.025, -1.18922, -83.2445, 1.18922, 83.2445, 152.402, 226.675, -4.75681, -80.8661, 4.75681, 80.8661, 22.7781, 306.352, -91.1574, -46.1664, 91.1574, 46.1664, 219.16, 350.352 )
+}
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( -2.37842, -121.299, 2.37842, 121.299, 40.0641, -8.32439, 2.37849, 114.164, -2.37849, -114.164, 230.337, -45.1898, 3.56764, 89.1907, -3.56764, -89.1907, 31.7397, -161.732, -1.96682, -124.654, 1.96682, 124.654, 231.527, -193.841 )
+}
+
+[node name="Segment" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CoinChain" parent="." instance=ExtResource( 1 )]
+curve = SubResource( 1 )
+
+[node name="CoinChain2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 183.69, 263.54 )
+curve = SubResource( 2 )
+coin_interval = 36
+coin_type = "Ruby"
+
+[node name="LowerRightCorner" type="Position2D" parent="."]
+position = Vector2( 442.385, 382.925 )
