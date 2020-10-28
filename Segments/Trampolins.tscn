@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Segments/Segment.gd" type="Script" id=2]
+[ext_resource path="res://Segments/Trampoline/Trampoline.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Segments/Magnet/Magnet.tscn" type="PackedScene" id=4]
+
+[node name="Segment" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="LowerRightCorner" type="Position2D" parent="."]
+position = Vector2( 609.262, 293.831 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 3 )]
+position = Vector2( 558.65, 115.419 )
+
+[node name="Trampoline2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 417.228, 188.958 )
+
+[node name="Trampoline4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 280.049, 231.384 )
+
+[node name="Trampoline3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 124.486, 272.396 )
+
+[node name="Magnet" parent="." instance=ExtResource( 4 )]
+position = Vector2( 449.755, 55.4507 )

@@ -24,6 +24,10 @@ config/name="Mega Jump"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[memory]
+
+limits/message_queue/max_size_kb=4096
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
