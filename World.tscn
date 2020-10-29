@@ -14,11 +14,12 @@ script = ExtResource( 1 )
 color = Color( 0.0705882, 0.482353, 0.184314, 1 )
 polygon = PoolVector2Array( 513.395, 39.0022, 514.809, 181.838, -514.738, 186.08, -513.324, 36.1738 )
 
-[node name="PressSpaceToStart" type="Label" parent="Level/Ground"]
+[node name="QuickStartGuide" type="Label" parent="Level/Ground"]
 margin_left = -447.0
 margin_right = -296.0
 margin_bottom = 14.0
-text = "Press space to start."
+text = "Use mouse to move.
+Press space to start."
 __meta__ = {
 "_edit_use_anchors_": false
 }

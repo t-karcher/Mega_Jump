@@ -14,7 +14,7 @@ _data = {
 [sub_resource type="Curve2D" id=2]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( -2.37842, -121.299, 2.37842, 121.299, 69.49, 182.233, 2.37849, 114.164, -2.37849, -114.164, 230.337, -45.1898, 0, 0, 0, 0, 121.815, -98.6239, 3.56764, 89.1907, -3.56764, -89.1907, 31.7397, -161.732, -1.96682, -124.654, 1.96682, 124.654, 231.527, -193.841 )
+"points": PoolVector2Array( -142.386, -64.7305, 142.386, 64.7305, 69.49, 182.233, 2.82843, 73.5391, -2.82843, -73.5391, 298.593, 69.0964, 2.37849, 114.164, -2.37849, -114.164, 230.337, -45.1898, 0, 0, 0, 0, 121.815, -98.6239, 3.56764, 89.1907, -3.56764, -89.1907, 31.7397, -161.732, -1.96682, -124.654, 1.96682, 124.654, 231.527, -193.841 )
 }
 
 [node name="Segment" type="Node2D"]
@@ -27,11 +27,11 @@ curve = SubResource( 1 )
 [node name="CoinChain2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 257.229, 301.724 )
 curve = SubResource( 2 )
-coin_interval = 36
+coin_interval = 86
 coin_type = "Ruby"
 
 [node name="LowerRightCorner" type="Position2D" parent="."]
-position = Vector2( 524.409, 661.526 )
+position = Vector2( 576.735, 644.556 )
 
 [node name="Trampoline" parent="." instance=ExtResource( 3 )]
 position = Vector2( 230.552, 224.313 )
