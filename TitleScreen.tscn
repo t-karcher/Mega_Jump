@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KGMissKindergarten.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://title.png" type="Texture" id=2]
+[ext_resource path="res://TitleScreen.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Polygon2D" parent="."]
+color = Color( 0.160784, 0.164706, 0.309804, 1 )
+polygon = PoolVector2Array( -16.3352, -11.5985, 1035.84, -11.5985, 1037.25, 612.07, -10.6783, 614.898 )
+
+[node name="TitleImage" type="Sprite" parent="."]
+position = Vector2( 508.789, 262.052 )
+scale = Vector2( 0.80574, 0.80574 )
+texture = ExtResource( 2 )
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 436.809
+margin_top = 509.142
+margin_right = 607.809
+margin_bottom = 562.142
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]

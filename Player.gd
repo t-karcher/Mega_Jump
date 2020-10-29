@@ -21,10 +21,14 @@ func _process(delta):
 	if rocket_boost != 0:
 		speed.y = min(speed.y, rocket_boost)
 	position += speed
-	if position.y > 20: position.y = 20
+	if position.y > 20:
+		position.y = 20
+		speed.y = 0
+	if speed.y > 40:
+		get_tree().change_scene_to(world.title_scene)
 
 func react_to_coin(coin_type):
-	speed.y = -20
+	speed.y = min(speed.y, -20)
 	world.coin_count += 1
 
 func react_to_trampoline():
@@ -53,5 +57,5 @@ func _on_powerup_changed(new_powerup):
 			rocket_fire.emitting = false
 		
 func _input(event):
-	if event.is_action_pressed("ui_select"):
-		speed.y = -20
+	if event.is_action_pressed("ui_select") and position.y > 0:
+		speed.y = -50

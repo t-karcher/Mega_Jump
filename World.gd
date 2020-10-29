@@ -5,6 +5,7 @@ signal coins_updated (new_value)
 
 onready var powerup_timer = $PowerUpTimer
 
+var title_scene: PackedScene = load("res://TitleScreen.tscn")
 var current_level_height : float = 0
 var coin_count : int = 0 setget set_coin_count
 var active_powerup : String = "" setget set_active_powerup
