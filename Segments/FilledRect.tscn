@@ -6,48 +6,53 @@
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 483.232, 30.5685 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 485.935, 311.356 )
 }
 
 [sub_resource type="Curve2D" id=2]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 484.413, 29.3709 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 485.963, 315.297 )
 }
 
 [sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 483.232, 30.5685 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 494.517, 324.834 )
 }
 
 [sub_resource type="Curve2D" id=4]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 483.232, 30.5685 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0.345978, 28.077, 0, 0, -1.18928, 39.2439, 481.807, 327.452 )
 }
 
 [node name="Segment" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="CoinChain" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1.41418, 28.2843 )
 rotation = 0.00715032
 curve = SubResource( 1 )
+coin_interval = 50
 
 [node name="CoinChain2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 30 )
+position = Vector2( 5.65686, 82.3259 )
 rotation = 0.00715032
 curve = SubResource( 2 )
+coin_interval = 50
 
 [node name="CoinChain3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 60 )
+position = Vector2( 2.82843, 134.953 )
 rotation = 0.00715032
 curve = SubResource( 3 )
+coin_interval = 50
 
 [node name="CoinChain4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 90 )
+position = Vector2( 5.65686, 188.995 )
 rotation = 0.00715032
 curve = SubResource( 4 )
+coin_interval = 50
 
 [node name="LowerRightCorner" type="Position2D" parent="."]
-position = Vector2( 501.846, 152.219 )
+position = Vector2( 540.03, 543.956 )

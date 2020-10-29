@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Segments/CoinChain/CoinChain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Segments/Segment.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 43.2217, 28.6905, 7.236e-05, -65.4065, -7.236e-05, 65.4065, 161.915, 91.105, 8.39233e-05, -67.7849, -8.39233e-05, 67.7849, 19.4107, 201.85, 0, 0, 0, 0, 321.017, 149.333, -1.18922, -83.2445, 1.18922, 83.2445, 557.539, 195.501, -4.75681, -80.8661, 4.75681, 80.8661, 254.346, 365.353, 39.685, -41.2724, -39.685, 41.2724, 74.9697, 414.562, -91.1574, -46.1664, 91.1574, 46.1664, 116.242, 571.581 )
+}
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( -142.386, -64.7305, 142.386, 64.7305, -160.729, -6.49493, -249.222, 7.937, 249.222, -7.937, 91.668, 234.923, 98.4188, -125.405, -98.4188, 125.405, 167.863, 88.7491, 2.82843, 73.5391, -2.82843, -73.5391, 396.449, 104.623, 2.37849, 114.164, -2.37849, -114.164, 230.337, -45.1898, 0, 0, 0, 0, 121.815, -98.6239, 3.56764, 89.1907, -3.56764, -89.1907, -1.98853, -157.298, -1.96682, -124.654, 1.96682, 124.654, 371.05, -206.507 )
+}
+
+[node name="Segment" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CoinChain" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5.65686, 14.1421 )
+curve = SubResource( 1 )
+coin_interval = 81
+
+[node name="CoinChain2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 195.32, 338.234 )
+curve = SubResource( 2 )
+coin_interval = 86
+coin_type = "Ruby"
+
+[node name="LowerRightCorner" type="Position2D" parent="."]
+position = Vector2( 619.595, 687.416 )

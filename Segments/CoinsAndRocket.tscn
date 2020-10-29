@@ -19,7 +19,7 @@ _data = {
 [sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 227.724, 384.119, -0.320084, -120.015, 0.320084, 120.015, 343.689, 507.156, 73.4757, -3.53519, -73.4757, 3.53519, 234.795, 651.406, 1.15748, 47.0541, -1.15748, -47.0541, 96.2018, 546.754, -143.091, -4.1452, 143.091, 4.1452, 223.481, 381.291 )
+"points": PoolVector2Array( -148.492, 1.41421, 148.492, -1.41421, 216.41, 410.989, 127.216, 0.707449, -127.216, -0.707449, 222.067, 606.151, -143.091, -4.1452, 143.091, 4.1452, 205.096, 410.989 )
 }
 
 [node name="Segment" type="Node2D"]
@@ -28,14 +28,17 @@ script = ExtResource( 2 )
 [node name="CoinChain" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5.65686, 14.1421 )
 curve = SubResource( 1 )
+coin_interval = 40
 
 [node name="CoinChain2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 257.229, 301.724 )
 curve = SubResource( 2 )
+coin_interval = 40
 
 [node name="CoinChain3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4.24261, 21.2132 )
 curve = SubResource( 3 )
+coin_interval = 50
 
 [node name="LowerRightCorner" type="Position2D" parent="."]
 position = Vector2( 510.267, 875.073 )
