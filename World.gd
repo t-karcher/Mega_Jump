@@ -12,7 +12,8 @@ var active_powerup : String = "" setget set_active_powerup
 var segments = [
 	preload("res://Segments/CurlyChains.tscn"),
 	preload("res://Segments/FilledRect.tscn"),
-	preload("res://Segments/Trampolins.tscn")
+	preload("res://Segments/Trampolins.tscn"),
+	preload("res://Segments/CoinsAndRocket.tscn")
 	#TODO: Add more segments here
 ]
 

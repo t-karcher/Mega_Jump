@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
 const GRAVITY = 40
-var speed: Vector2 = Vector2.ZERO
+var rocket_boost : float = 0
+var speed := Vector2.ZERO
 
 onready var world : Node2D = get_parent()
 onready var magnetic_field : CollisionShape2D = $MagneticField/CollisionShape2D
+onready var rocket_fire : Particles2D = $RocketFire
 
 func _ready():
 	# magnetic field is disabled by default
@@ -16,6 +18,8 @@ func _process(delta):
 	if abs(target_x - position.x) > 1:
 		speed.x = clamp((target_x - position.x) / 6, -50, 50)
 	speed.y += GRAVITY * delta
+	if rocket_boost != 0:
+		speed.y = min(speed.y, rocket_boost)
 	position += speed
 	if position.y > 20: position.y = 20
 
@@ -30,12 +34,24 @@ func react_to_trampoline():
 func react_to_magnet():
 	world.active_powerup = "Magnet"
 
-func _on_powerup_changed(new_powerup):
-	if new_powerup == "Magnet":
-		magnetic_field.set_deferred("disabled", false)
-	else:
-		magnetic_field.set_deferred("disabled", true)
+func react_to_rocket():
+	world.active_powerup = "Rocket"
 
+func _on_powerup_changed(new_powerup):
+	match new_powerup:
+		"Magnet":
+			magnetic_field.set_deferred("disabled", false)
+			rocket_boost = 0
+			rocket_fire.emitting = false
+		"Rocket":
+			magnetic_field.set_deferred("disabled", true)
+			rocket_boost = -15
+			rocket_fire.emitting = true
+		_:
+			magnetic_field.set_deferred("disabled", true)
+			rocket_boost = 0
+			rocket_fire.emitting = false
+		
 func _input(event):
 	if event.is_action_pressed("ui_select"):
 		speed.y = -20

@@ -3,7 +3,8 @@ extends CanvasLayer
 onready var coin_coint_label = $CoinCountLabel
 onready var world = get_parent()
 onready var powerups = {
-	"Magnet": $PowerUps/Magnet
+	"Magnet": $PowerUps/Magnet,
+	"Rocket": $PowerUps/Rocket
 	# add more powerups here
 }
 

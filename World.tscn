@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Segments/Rocket/rocket.png" type="Texture" id=3]
 [ext_resource path="res://HUD.gd" type="Script" id=4]
 [ext_resource path="res://Segments/Magnet/magnet.png" type="Texture" id=5]
 
@@ -25,7 +26,7 @@ __meta__ = {
 }
 
 [node name="PowerUpTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 8.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -58,4 +59,10 @@ visible = false
 scale = Vector2( 0.292893, 0.292893 )
 texture = ExtResource( 5 )
 centered = false
+
+[node name="Rocket" type="Sprite" parent="HUD/PowerUps"]
+visible = false
+position = Vector2( 19.7988, 20.5061 )
+scale = Vector2( 0.143738, 0.143738 )
+texture = ExtResource( 3 )
 [connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]

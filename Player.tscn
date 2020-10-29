@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,6 +8,17 @@ extents = Vector2( 21.319, 21.2373 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 111.76
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 34.11
+initial_velocity = 256.0
+initial_velocity_random = 0.2
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 5.0
+color = Color( 0.145098, 0.682353, 0.192157, 1 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -37,3 +48,9 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MagneticField"]
 shape = SubResource( 2 )
+
+[node name="RocketFire" type="Particles2D" parent="."]
+emitting = false
+amount = 50
+local_coords = false
+process_material = SubResource( 3 )
