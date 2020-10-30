@@ -1,6 +1,10 @@
 extends CanvasLayer
 
 onready var coin_coint_label = $CoinCountLabel
+onready var warning_timer = $WarningTimer
+onready var blinker_anim = $PowerUps/AnimationPlayer
+onready var ticking_sound = $TickingSound
+onready var powerup_box = $PowerUps
 onready var world = get_parent()
 onready var powerups = {
 	"Magnet": $PowerUps/Magnet,
@@ -14,8 +18,20 @@ func _ready():
 
 func _on_coins_updated(new_value):
 	coin_coint_label.text = str(new_value).pad_zeros(3)
-	
+
 func _on_powerup_changed(new_powerup):
+	warning_timer.stop()
+	ticking_sound.stop()
+	blinker_anim.stop()
 	var powerup_keys = powerups.keys()
 	for powerup in powerup_keys:
 		powerups[powerup].visible = (powerup == new_powerup)
+	if new_powerup == "":
+		powerup_box.visible = false
+	else:
+		powerup_box.visible = true
+		warning_timer.start()
+
+func _on_PowerUpWarningTimer_timeout():
+	ticking_sound.play(0.8)
+	blinker_anim.play("Blink")

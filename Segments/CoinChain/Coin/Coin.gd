@@ -12,7 +12,7 @@ func _on_Coin_body_entered(body):
 		body.react_to_coin(coin_type)
 		queue_free()
 
-func set_coin_type(new_value):
+func set_coin_type(new_value: String):
 	coin_type = new_value
 	$AnimatedCoin.play(new_value)
 

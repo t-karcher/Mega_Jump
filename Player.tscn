@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://512815__mostyxs__good-jetpack-sound-loop.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.319, 21.2373 )
@@ -54,3 +55,6 @@ emitting = false
 amount = 50
 local_coords = false
 process_material = SubResource( 3 )
+
+[node name="RocketSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

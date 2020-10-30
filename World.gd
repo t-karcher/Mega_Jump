@@ -39,13 +39,10 @@ func _process(_delta):
 			s.queue_free()
 	# make sure there're enough segments prepared above
 	while current_level_height > $Player.position.y - 400:
-		add_segment()
-
-func add_segment():
-	var s:CoinSegment = segments[randi() % segments.size()].instance()
-	$Level.add_child(s)
-	current_level_height -= s.segment_height
-	s.position = Vector2(s.segment_left, current_level_height)
+		var s:CoinSegment = segments[randi() % segments.size()].instance()
+		$Level.add_child(s)
+		current_level_height -= s.segment_height
+		s.position = Vector2(s.segment_left, current_level_height)
 
 func _on_PowerUpTimer_timeout():
 	set_active_powerup("")

@@ -4,7 +4,7 @@ tool
 export(int, 100) var coin_interval = 30 setget set_coin_interval
 export(String, "Gold", "Silver", "Ruby") var coin_type = "Gold" setget set_coin_type
 
-var coin = preload("res://Segments/CoinChain/Coin/Coin.tscn")
+var coin : PackedScene = preload("res://Segments/CoinChain/Coin/Coin.tscn")
 
 func _ready():
 	if !Engine.editor_hint:
@@ -31,7 +31,7 @@ func set_coin_type(new_value):
 	update()
 
 func spawn_coins():
-	var l = int(curve.get_baked_length())
+	var l : int = int(curve.get_baked_length())
 	for i in range (0, l, coin_interval):
 		var spawn_position = curve.interpolate_baked(i)
 		var c = coin.instance()
