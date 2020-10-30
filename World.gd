@@ -16,7 +16,8 @@ var segments = [
 	preload("res://Segments/Trampolins.tscn"),
 	preload("res://Segments/CoinsAndRocket.tscn"),
 	preload("res://Segments/RandomCoins.tscn"),
-	preload("res://Segments/SunCoins.tscn")
+	preload("res://Segments/SunCoins.tscn"),
+	preload("res://Segments/SimonsSegment.tscn")
 	#TODO: Add more segments here
 ]
 

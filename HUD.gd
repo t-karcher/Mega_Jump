@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 onready var coin_coint_label = $CoinCountLabel
+onready var coin_sound = $CoinSound
+onready var coin_pitch : AudioEffectPitchShift = AudioServer.get_bus_effect(1,0)
 onready var warning_timer = $WarningTimer
 onready var blinker_anim = $PowerUps/AnimationPlayer
 onready var ticking_sound = $TickingSound
@@ -18,7 +20,9 @@ func _ready():
 
 func _on_coins_updated(new_value):
 	coin_coint_label.text = str(new_value).pad_zeros(3)
-
+	coin_pitch.pitch_scale = 0.4 + ((new_value % 50) / 50.0)
+	coin_sound.play()
+	
 func _on_powerup_changed(new_powerup):
 	warning_timer.stop()
 	ticking_sound.stop()

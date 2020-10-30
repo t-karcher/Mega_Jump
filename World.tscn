@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Segments/Magnet/magnet.png" type="Texture" id=5]
 [ext_resource path="res://clouds_background.png" type="Texture" id=6]
 [ext_resource path="res://140147__tewkesound__mantel-clock-ticking.wav" type="AudioStream" id=7]
+[ext_resource path="res://411749__natty23__bell-ding.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -106,5 +107,9 @@ one_shot = true
 
 [node name="TickingSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource( 7 )
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 8 )
+bus = "CoinBus"
 [connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]
 [connection signal="timeout" from="HUD/WarningTimer" to="HUD" method="_on_PowerUpWarningTimer_timeout"]
