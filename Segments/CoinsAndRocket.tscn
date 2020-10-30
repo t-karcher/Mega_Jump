@@ -29,11 +29,13 @@ script = ExtResource( 2 )
 position = Vector2( 5.65686, 14.1421 )
 curve = SubResource( 1 )
 coin_interval = 40
+coin_type = "Silver"
 
 [node name="CoinChain2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 257.229, 301.724 )
 curve = SubResource( 2 )
 coin_interval = 40
+coin_type = "Silver"
 
 [node name="CoinChain3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4.24261, 21.2132 )

@@ -37,3 +37,4 @@ func spawn_coins():
 		var c = coin.instance()
 		add_child(c)
 		c.position = spawn_position
+		c.coin_type = coin_type
