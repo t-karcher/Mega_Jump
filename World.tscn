@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://clouds_background.png" type="Texture" id=6]
 [ext_resource path="res://140147__tewkesound__mantel-clock-ticking.wav" type="AudioStream" id=7]
 [ext_resource path="res://411749__natty23__bell-ding.wav" type="AudioStream" id=8]
+[ext_resource path="res://kissclipart-people-in-nature-natural-landscape-grassland-natur-29d17df607c707ec.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -42,14 +43,16 @@ region_rect = Rect2( 0, 0, 1920, 10000 )
 
 [node name="Level" type="Node2D" parent="."]
 
-[node name="Ground" type="Polygon2D" parent="Level"]
-color = Color( 0.0705882, 0.482353, 0.184314, 1 )
-polygon = PoolVector2Array( 513.395, 39.0022, 532.869, 355.781, -533.926, 358.777, -513.324, 36.1738 )
+[node name="Ground" type="Sprite" parent="Level"]
+position = Vector2( 2.40277, -82.8535 )
+scale = Vector2( 1.04044, 1.04044 )
+texture = ExtResource( 9 )
 
 [node name="QuickStartGuide" type="Label" parent="Level/Ground"]
-margin_left = -447.0
-margin_right = -296.0
-margin_bottom = 14.0
+margin_left = -470.976
+margin_top = -114.74
+margin_right = -319.976
+margin_bottom = -83.7403
 text = "Use mouse to move.
 Press space to start."
 __meta__ = {
@@ -110,6 +113,7 @@ stream = ExtResource( 7 )
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource( 8 )
+volume_db = -18.999
 bus = "CoinBus"
 [connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]
 [connection signal="timeout" from="HUD/WarningTimer" to="HUD" method="_on_PowerUpWarningTimer_timeout"]

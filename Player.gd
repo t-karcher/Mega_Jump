@@ -8,6 +8,8 @@ onready var world : Node2D = get_parent()
 onready var magnetic_field : CollisionShape2D = $MagneticField/CollisionShape2D
 onready var rocket_fire : Particles2D = $RocketFire
 onready var rocket_sound : AudioStreamPlayer = $RocketSound
+onready var bouncing_sound : AudioStreamPlayer = $BouncingSound
+onready var magnet_sound : AudioStreamPlayer = $MagnetSound
 
 func _ready():
 	# magnetic field is disabled by default
@@ -36,6 +38,7 @@ func react_to_coin(coin_type):
 func react_to_trampoline():
 	if speed.y >= 0:
 		speed.y = -20
+		bouncing_sound.play()
 		
 func react_to_magnet():
 	world.active_powerup = "Magnet"
@@ -47,6 +50,7 @@ func _on_powerup_changed(new_powerup: String):
 	match new_powerup:
 		"Magnet":
 			magnetic_field.set_deferred("disabled", false)
+			magnet_sound.play()
 			rocket_boost = 0
 			rocket_fire.emitting = false
 			rocket_sound.stop()
