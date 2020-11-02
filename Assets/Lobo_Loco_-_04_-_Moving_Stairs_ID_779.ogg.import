@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lobo_Loco_-_04_-_Moving_Stairs_ID_779.ogg-067d54192aed5e6de7fed55f43719ec5.oggstr"
+
+[deps]
+
+source_file="res://Assets/Lobo_Loco_-_04_-_Moving_Stairs_ID_779.ogg"
+dest_files=[ "res://.import/Lobo_Loco_-_04_-_Moving_Stairs_ID_779.ogg-067d54192aed5e6de7fed55f43719ec5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

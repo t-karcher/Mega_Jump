@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://KGMissKindergarten.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://title.png" type="Texture" id=2]
+[ext_resource path="res://Assets/KGMissKindergarten.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/title.png" type="Texture" id=2]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=3]
-[ext_resource path="res://Lobo_Loco_-_04_-_Moving_Stairs_ID_779.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Lobo_Loco_-_04_-_Moving_Stairs_ID_779.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

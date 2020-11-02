@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/19486__halleck__jacobsladdersingle1.wav-59d3405e8125e4ac7147f6cfa764b775.sample"
+
+[deps]
+
+source_file="res://Assets/19486__halleck__jacobsladdersingle1.wav"
+dest_files=[ "res://.import/19486__halleck__jacobsladdersingle1.wav-59d3405e8125e4ac7147f6cfa764b775.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

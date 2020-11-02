@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Segments/Rocket/rocket.png" type="Texture" id=3]
 [ext_resource path="res://HUD.gd" type="Script" id=4]
 [ext_resource path="res://Segments/Magnet/magnet.png" type="Texture" id=5]
-[ext_resource path="res://clouds_background.png" type="Texture" id=6]
-[ext_resource path="res://140147__tewkesound__mantel-clock-ticking.wav" type="AudioStream" id=7]
-[ext_resource path="res://411749__natty23__bell-ding.wav" type="AudioStream" id=8]
-[ext_resource path="res://kissclipart-people-in-nature-natural-landscape-grassland-natur-29d17df607c707ec.png" type="Texture" id=9]
+[ext_resource path="res://Assets/clouds_background.png" type="Texture" id=6]
+[ext_resource path="res://Assets/140147__tewkesound__mantel-clock-ticking.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/411749__natty23__bell-ding.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/kissclipart-people-in-nature-natural-landscape-grassland-natur-29d17df607c707ec.png" type="Texture" id=9]
+[ext_resource path="res://Assets/bg_single_1536x3840.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -34,7 +35,14 @@ script = ExtResource( 1 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 0.1 )
 
-[node name="clouds_background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Space" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1.51553, -5343.42 )
+scale = Vector2( 0.679833, 0.679833 )
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1536, 7000 )
+
+[node name="Clouds" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 0, -2361.33 )
 scale = Vector2( 0.539583, 0.539583 )
 texture = ExtResource( 6 )

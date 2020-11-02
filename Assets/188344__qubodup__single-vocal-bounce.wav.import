@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/188344__qubodup__single-vocal-bounce.wav-2556e40bf87de785669e18d0a880c40b.sample"
+
+[deps]
+
+source_file="res://Assets/188344__qubodup__single-vocal-bounce.wav"
+dest_files=[ "res://.import/188344__qubodup__single-vocal-bounce.wav-2556e40bf87de785669e18d0a880c40b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

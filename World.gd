@@ -4,6 +4,9 @@ signal powerup_changed (new_powerup)
 signal coins_updated (new_value)
 
 onready var powerup_timer = $PowerUpTimer
+onready var player = $Player
+onready var level = $Level
+onready var cloud_background = $ParallaxBackground/ParallaxLayer/Clouds
 
 var title_scene: PackedScene = load("res://TitleScreen.tscn")
 var current_level_height : float = 0
@@ -35,15 +38,21 @@ func set_active_powerup(new_value):
 
 func _process(_delta):
 	# delete segments below player	
-	for s in $Level.get_children():
-		if s.position.y > $Player.position.y + 400:
+	for s in level.get_children():
+		if s.position.y > player.position.y + 400:
 			s.queue_free()
 	# make sure there're enough segments prepared above
-	while current_level_height > $Player.position.y - 400:
+	while current_level_height > player.position.y - 400:
 		var s:CoinSegment = segments[randi() % segments.size()].instance()
-		$Level.add_child(s)
+		level.add_child(s)
 		current_level_height -= s.segment_height
 		s.position = Vector2(s.segment_left, current_level_height)
+	# fade out clouds when player reaches space
+	var fade_start: float = -30000
+	var fade_range: float = 16000
+	if player.position.y < fade_start:
+		var cloud_opacity = (player.position.y - fade_start + fade_range) / fade_range
+		cloud_background.modulate.a = cloud_opacity
 
 func _on_PowerUpTimer_timeout():
 	set_active_powerup("")
